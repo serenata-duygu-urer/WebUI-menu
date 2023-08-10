@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="./main.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="menu-main">
+        <div class="menu-row">
+          <div class="menu-item burger-menu col-large-1 col-small-1 col-medium-1">
+            <i class="fa fa-bars" onclick="menuTrigger()"></i>
+          </div>
+          <div class="menu-item site-img-menu col-large-10 col-small-10 col-medium-10">
+            <img alt="Serenata Flowers"
+              src="https://res.cloudinary.com/serenata-commerce-limited/image/upload/f_auto,q_auto/v1/WebContent/serenatalogo-280.png"
+              crossorigin="anonymous" />
+          </div>
+          <div class="menu-item burger-menu col-large-1 col-small-1 col-medium-1">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="menu-details" style="display: none;">
+      <div class="menu-items menu-row">
+        <div class="col-12">
+          <ul class="menu-detail col-12">
+            <li class="menu-detail-item col-12">
+              <a class="menu-detail-main-heading">
+                <i class="fa fa-heart" style="padding: 0 1em 0 0;"></i>
+                <strong>Your Favourite Products</strong>
+              </a>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="New Flowers"
+                href="http://www-dev.vpn.serenataflowers.com/new-flowers">
+                New
+              </a>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="Flowers" href="#" onclick="return false;">
+                Flowers&nbsp;
+                <i class="fa fa-angle-down"></i>
+              </a>
+              <div id="submenu-flowers" class="menu-submenu-list">
+                <div class="row">
+                  <div class="menu-subheading">
+                    Most Popular Flowers
+                  </div>
+                  <ul class="menu-items row">
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="New Flowers" href="http://www-dev.vpn.serenataflowers.com/new-flowers">
+                        New
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="All Flowers" href="http://www-dev.vpn.serenataflowers.com/all-flowers">
+                        All Flowers
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Flower Subscription" href="http://www-dev.vpn.serenataflowers.com/flower-subscriptions">
+                        Flower Subscription
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Summer Flowers" href="http://www-dev.vpn.serenataflowers.com/summer-flowers">
+                        Summer Flowers
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Flowers under £30" href="http://www-dev.vpn.serenataflowers.com/cheap-flowers">
+                        Flowers under £30
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Supreme Collection" href="http://www-dev.vpn.serenataflowers.com/luxury-flowers">
+                        Supreme Collection
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <div class="menu-subheading">
+                    Flowers for Occasions
+                  </div>
+                  <ul class="menu-items row">
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Birthday Flowers" href="http://www-dev.vpn.serenataflowers.com/birthday-flowers">
+                        Birthday
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Romantic Flowers" href="http://www-dev.vpn.serenataflowers.com/romantic-flowers">
+                        Romantic
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Sympathy Flowers" href="http://www-dev.vpn.serenataflowers.com/sympathy-flowers">
+                        Sympathy
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Anniversary Flowers" href="http://www-dev.vpn.serenataflowers.com/anniversary-flowers">
+                        Anniversary
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Get Well Soon Flowers" href="http://www-dev.vpn.serenataflowers.com/get-well-flowers">
+                        Get Well
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="New Baby Flowers" href="http://www-dev.vpn.serenataflowers.com/baby-flowers">
+                        Baby
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Thank you Flowers" href="http://www-dev.vpn.serenataflowers.com/thank-you-flowers">
+                        Thank you
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Thinking of you Flowers"
+                        href="http://www-dev.vpn.serenataflowers.com/thinking-of-you-flowers">
+                        Thinking of you
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Congratulations Flowers"
+                        href="http://www-dev.vpn.serenataflowers.com/congratulations-flowers">
+                        Congratulations
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <div class="menu-subheading">
+                    Flower Varieties
+                  </div>
+                  <ul class="menu-items row">
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Roses" href="http://www-dev.vpn.serenataflowers.com/rose-delivery">
+                        Roses
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Lilies" href="http://www-dev.vpn.serenataflowers.com/lilies-delivery">
+                        Lilies
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Gerbera" href="http://www-dev.vpn.serenataflowers.com/gerbera-flowers">
+                        Gerbera
+                      </a>
+                    </li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Carnations" href="http://www-dev.vpn.serenataflowers.com/carnation-flowers">
+                        Carnations
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Sunflowers" href="http://www-dev.vpn.serenataflowers.com/sunflower-delivery">
+                        Sunflowers
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <div class="menu-subheading">
+                    Flowers by Colour
+                  </div>
+                  <ul class="menu-items row">
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Pink Flowers" href="http://www-dev.vpn.serenataflowers.com/pink-flowers">
+                        Pink
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="White Flowers" href="http://www-dev.vpn.serenataflowers.com/white-flowers">
+                        White
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Blue Flowers" href="http://www-dev.vpn.serenataflowers.com/blue-flowers">
+                        Blue
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Orange Flowers" href="http://www-dev.vpn.serenataflowers.com/orange-flowers">
+                        Orange
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Red Flowers" href="http://www-dev.vpn.serenataflowers.com/red-flowers">
+                        Red
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Yellow Flowers" href="http://www-dev.vpn.serenataflowers.com/yellow-flowers">
+                        Yellow
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <div class="menu-subheading">
+                    Funeral Flowers
+                  </div>
+                  <ul class="menu-items row">
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Funeral Flower Arrangements"
+                        href="http://www-dev.vpn.serenataflowers.com/funeral-flowers">
+                        Arrangements
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="Plants" href="#" onclick="return false;">
+                Plants&nbsp;<i class="fa fa-angle-down"></i>
+              </a>
+              <div id="submenu-plants" class="menu-submenu-list">
+                <div class="row">
+                  <div class="menu-subheading">
+                    Most Popular Plants
+                  </div>
+                  <ul class="menu-items row">
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Bestselling Plants" href="http://www-dev.vpn.serenataflowers.com/plants">
+                        Bestsellers
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="All Plants" href="http://www-dev.vpn.serenataflowers.com/all-plants">
+                        All Plants
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <div class="menu-subheading">
+                    Plants by Type
+                  </div>
+                  <ul class="menu-items row">
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Flowering Plants" href="http://www-dev.vpn.serenataflowers.com/flowering-plants">
+                        Flowering Plants
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Orchids" href="http://www-dev.vpn.serenataflowers.com/orchid-plants">
+                        Orchids
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Green Indoor Plants" href="http://www-dev.vpn.serenataflowers.com/indoor-plants">
+                        Green Indoor Plants
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Pet Safe Plants" href="http://www-dev.vpn.serenataflowers.com/pet-safe-plants">
+                        Pet Safe Plants
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Easy Care Plants" href="http://www-dev.vpn.serenataflowers.com/easy-care-plants">
+                        Easy Care Plants
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <div class="menu-subheading">
+                    Plants by Size
+                  </div>
+                  <ul class="menu-items row">
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Small Plants" href="http://www-dev.vpn.serenataflowers.com/small-plants">
+                        Small Plants
+                      </a>
+                    </li>
+                    <li class="menu-submenu-items col-large-2 col-medium-4 col-small-5">
+                      <a title="Tall Plants" href="http://www-dev.vpn.serenataflowers.com/tall-plants">
+                        Tall Plants
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div style="display: none;">
+                  <div class="menu-subheading">
+                    Deal of the week
+                  </div>
+                  <ul class="menu-items row">
+                    <li>
+                      <div class="product-item">
+                        <div>
+                          <a title="Deal of the week - Queen's Pearls "
+                            href="http://www-dev.vpn.serenataflowers.com/plants/product/110473/queens-pearls">
+                            <img alt="Queen's Pearls" crossorigin="anonymous"
+                              src="https://res.cloudinary.com/serenata-commerce-limited/image/upload/f_auto,q_auto/t_Product40/t_overlay_bestseller_nb/v1/Raw/110473_standing"
+                              style="min-width: 245px">
+                          </a>
+                        </div>
+                        <span class="product-title">Queen's Pearls </span>
+                        <div>
+                          <div class="rating-wrap">
+                            <div class="small ratings r-0 no-margin"></div><span class="review-count">(0)</span>
+                          </div>
+                          <span class="compare-price">£34.99</span>
+                          <span class="price">£32.99</span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="Letterbox Flowers By Post - FREE Delivery"
+                href="http://www-dev.vpn.serenataflowers.com/flowers-by-post">
+                Letterbox Flowers
+              </a>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="Flower Subscription"
+                href="http://www-dev.vpn.serenataflowers.com/flower-subscriptions">
+                Subscriptions
+              </a>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="Next Day Flower Delivery"
+                href="http://www-dev.vpn.serenataflowers.com/flower-delivery">
+                Next Day Delivery
+              </a>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="Help" class="utility-item" href="/help-centre/article">
+                <i class="fa fa-question-circle"></i>
+                <strong>Help</strong>
+              </a>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="Login / Register" class="utility-item">
+                <i class="fa fa-user-circle"></i>
+                <strong>Login / Register</strong>
+              </a>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="Track Your Order" class="utility-item"
+                href="/customersupport/ordertracking">
+                <i class="fa fa-truck-moving"></i>
+                <strong>Track Your Order</strong>
+              </a>
+            </li>
+            <li class="menu-detail-item col-medium-12">
+              <a class="menu-detail-main-heading" title="About Us" class="utility-item" href="/customersupport/aboutus">
+                <strong>About Us</strong>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

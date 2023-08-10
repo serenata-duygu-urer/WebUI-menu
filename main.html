@@ -20,7 +20,7 @@
       <div class="menu-main">
         <div class="menu-row">
           <div class="menu-item burger-menu col-large-1 col-small-1 col-medium-1">
-            <i class="fa fa-bars" onclick="menuTrigger()"></i>
+            <i class="fa fa-bars" id="menu-bars"></i>
           </div>
           <div class="menu-item site-img-menu col-large-10 col-small-10 col-medium-10">
             <img alt="Serenata Flowers"
@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="row" id="menu-details" style="display: none;">
+    <div class="row slider" id="menu-details">
       <div class="menu-items menu-row">
         <div class="col-12">
           <ul class="menu-detail col-12">
@@ -43,17 +43,17 @@
               </a>
             </li>
             <li class="menu-detail-item col-medium-12">
-              <a class="menu-detail-main-heading" title="New Flowers"
+              <a class="menu-detail-main-heading utility-item" title="New Flowers"
                 href="http://www-dev.vpn.serenataflowers.com/new-flowers">
                 New
               </a>
             </li>
             <li class="menu-detail-item col-medium-12">
-              <a class="menu-detail-main-heading" title="Flowers" href="#" onclick="return false;">
+              <a class="menu-detail-main-heading" title="Flowers" href="#" id="menu-flowers">
                 Flowers&nbsp;
                 <i class="fa fa-angle-down"></i>
               </a>
-              <div id="submenu-flowers" class="menu-submenu-list">
+              <div id="submenu-flowers" class="menu-submenu-list slider">
                 <div class="row">
                   <div class="menu-subheading">
                     Most Popular Flowers
@@ -230,10 +230,10 @@
               </div>
             </li>
             <li class="menu-detail-item col-medium-12">
-              <a class="menu-detail-main-heading" title="Plants" href="#" onclick="return false;">
+              <a class="menu-detail-main-heading" title="Plants" href="#" id="menu-plants">
                 Plants&nbsp;<i class="fa fa-angle-down"></i>
               </a>
-              <div id="submenu-plants" class="menu-submenu-list">
+              <div id="submenu-plants" class="menu-submenu-list slider">
                 <div class="row">
                   <div class="menu-subheading">
                     Most Popular Plants
@@ -348,26 +348,26 @@
               </a>
             </li>
             <li class="menu-detail-item col-medium-12">
-              <a class="menu-detail-main-heading" title="Help" class="utility-item" href="/help-centre/article">
+              <a class="menu-detail-main-heading utility-item" title="Help" href="/help-centre/article">
                 <i class="fa fa-question-circle"></i>
                 <strong>Help</strong>
               </a>
             </li>
             <li class="menu-detail-item col-medium-12">
-              <a class="menu-detail-main-heading" title="Login / Register" class="utility-item">
+              <a class="menu-detail-main-heading utility-item" title="Login / Register">
                 <i class="fa fa-user-circle"></i>
                 <strong>Login / Register</strong>
               </a>
             </li>
             <li class="menu-detail-item col-medium-12">
-              <a class="menu-detail-main-heading" title="Track Your Order" class="utility-item"
+              <a class="menu-detail-main-heading utility-item" title="Track Your Order"
                 href="/customersupport/ordertracking">
                 <i class="fa fa-truck-moving"></i>
                 <strong>Track Your Order</strong>
               </a>
             </li>
             <li class="menu-detail-item col-medium-12">
-              <a class="menu-detail-main-heading" title="About Us" class="utility-item" href="/customersupport/aboutus">
+              <a class="menu-detail-main-heading utility-item" title="About Us" href="/customersupport/aboutus">
                 <strong>About Us</strong>
               </a>
             </li>

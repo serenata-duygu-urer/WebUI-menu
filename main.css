@@ -50,7 +50,7 @@ a {
   }
 
   .menu-main {
-    display: -webkit-box;
+    display: block;
     width: -webkit-fill-available;
     height: 3em;
     padding: .5em 0 9px 0;
@@ -59,7 +59,7 @@ a {
     flex-basis: auto;
     background: #fff;
     z-index: 100;
-    position: fixed;
+    position: sticky;
     transition: .5s ease;
     /* border-bottom: 1px solid #000; */
   }
@@ -67,7 +67,7 @@ a {
   .menu-main.open {
     transform: translateY(0);
   }
-  
+
   .menu-main.close {
     transform: translateY(-100%);
   }
@@ -85,21 +85,22 @@ a {
 
   .menu-details {
     z-index: 10;
-    position: fixed;
+    position: absolute;
     width: 100%;
     background: #fff;
     box-sizing: border-box;
     transition: .5s ease;
-
+    overflow-y: scroll;
+    max-height: 100%;
   }
 
   .menu-details.open {
-    overflow: hidden;
+    /* TODO: bunu 0 a cekecek bir yol bul*/
     transform: translateY(4em);
   }
-  
+
   .menu-details.close {
-    transform: translateY(-100%);
+    transform: translateY(-120%);
   }
 
 
@@ -167,11 +168,13 @@ a {
     position: initial;
     transition: .5s ease;
   }
+
   .menu-submenu-list.close {
-    overflow: hidden;
+    overflow: scroll;
     max-height: 0;
     transition: max-height 1s;
-  }  
+  }
+
   .menu-submenu-list.open {
     max-height: 1000px;
   }

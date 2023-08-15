@@ -4,15 +4,18 @@
       if (!details.classList.contains('open')) {
         details.classList.add('open');
         details.classList.remove('close')
-        if (menuMain && menuMain.style.position !== 'fixed') {
+        if (menuMain && menuMain.style.position !== 'fixed'&& details.classList.contains('open')) {
           menuMain.style.position = 'inherit';
+          details.style.transform = 'translateY(0em)';
         }
+       
       } else {
         details.classList.add('close');
         details.classList.remove('open');
-        if (menuMain && menuMain.style.position !== 'fixed') {
+        if (menuMain && menuMain.style.position !== 'fixed' && details.classList.contains('close')) {
           // todo fix scroll csss in here 
           menuMain.style.position = 'sticky';
+          details.style.transform = '';
         }
       }
     });
@@ -57,7 +60,7 @@
     setMenu(menuDetails, menuFlowersDetails, menuPlantDetails);
 
     window.addEventListener("scroll", () => {
-      var currentScroll = window.scrollY;
+      var currentScroll = window.scrollY; 
       var scrollDiff = currentScroll - lastScroll;
       menuDetails.style.transform = '';
 

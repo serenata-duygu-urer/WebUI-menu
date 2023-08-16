@@ -91,5 +91,15 @@
       }
       lastScroll = currentScroll;
     });
+    menuDetails.addEventListener('scroll', ()=>{
+      
+      if(menuDetails.scrollTop >= 67){
+        setMenuElementClose(menuMain);
+        menuDetails.style.top = '0em';
+      }else{
+        setMenuElementOpen(menuMain);
+        menuDetails.style.top = '4em';
+      }
+    });
   });
 })();

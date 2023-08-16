@@ -58,9 +58,9 @@ a {
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
     background: #fff;
-    /* z-index: 100; */
+    z-index: 10;
     position: sticky;
-    transition: .5s ease;
+    transition: .25s ease;
     /* border-bottom: 1px solid #000; */
   }
 
@@ -89,7 +89,7 @@ a {
     width: 100%;
     background: #fff;
     box-sizing: border-box;
-    transition: .5s ease;
+    transition: .25s ease;
     overflow: auto;
     max-height: 100%;
   }
@@ -166,7 +166,7 @@ a {
   .menu-submenu-list {
     margin: 0 15px;
     position: initial;
-    transition: .5s ease;
+    transition: .25s ease;
   }
 
   .menu-submenu-list.close {

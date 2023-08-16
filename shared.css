@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+i.fa.fa-heart {
+  color: darkred;
+}
+
+
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}

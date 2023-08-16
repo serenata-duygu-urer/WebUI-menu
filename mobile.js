@@ -4,13 +4,14 @@
       if (!details.classList.contains('open')) {
         details.classList.add('open');
         details.classList.remove('close')
-        if (menuMain && menuMain.style.position !== 'fixed'&& details.classList.contains('open')) {
+        if (menuMain && menuMain.style.position !== 'fixed' && details.classList.contains('open')) {
           menuMain.style.position = 'inherit';
+          details.style.top = (67) + 'px';
         }
-        if (menuMain && menuMain.style.position === 'fixed'&& details.classList.contains('open')) {
-          details.style.top = '4em';
+        if (menuMain && menuMain.style.position === 'fixed' && details.classList.contains('open')) {
+          details.style.top = (window.scrollY + 67) + 'px';
         }
-       
+
       } else {
         details.classList.add('close');
         details.classList.remove('open');
@@ -55,51 +56,62 @@
   };
 
   document.addEventListener("DOMContentLoaded", function (event) {
-    var menuMain = document.getElementById('menu-main');
-    var menuDetails = document.getElementById('menu-details');
-    var menuFlowersDetails = document.getElementById('submenu-flowers');
-    var menuPlantDetails = document.getElementById('submenu-plants');
-
-    setMenu(menuDetails, menuFlowersDetails, menuPlantDetails);
-
-    window.addEventListener("scroll", () => {
-      var currentScroll = window.scrollY; 
-      var scrollDiff = currentScroll - lastScroll;
-
-      menuMain.style.position = 'fixed';
-      menuDetails.style.position = 'fixed';
-
-      menuDetails.style.transition = '';
-
-      if (currentScroll === 0) {
-        menuMain.style.position = 'sticky';
-        if (menuDetails.classList.contains('open')) {
-          menuDetails.style.transition = '0s ease';
-        }
-      }
-      else if (scrollDiff > 0) {
-
-        // scrolled down -- header hide
-         setMenuElementClose(menuMain);
-        setMenuElementClose(menuDetails);
-        setMenuElementClose(menuFlowersDetails);
-        setMenuElementClose(menuPlantDetails);
-      }
-      else {
-        // scrolled up -- header show
-        setMenuElementOpen(menuMain);
-      }
-      lastScroll = currentScroll;
-    });
-    menuDetails.addEventListener('scroll', ()=>{
+    if (window.innerWidth <= 1023) {
+      var menuMain = document.getElementById('menu-main');
+      var menuDetails = document.getElementById('menu-details');
+      var menuFlowersDetails = document.getElementById('submenu-flowers');
+      var menuPlantDetails = document.getElementById('submenu-plants');
+      var scrollDiffSum = 0;
+      setMenu(menuDetails, menuFlowersDetails, menuPlantDetails);
+      menuMain.style.position = 'sticky';
+      // menuDetails.style.position = 'fixed';
       
-      if(menuDetails.scrollTop >= 67){
-        setMenuElementClose(menuMain);
-        menuDetails.style.top = '0em';
-      }else{
-        setMenuElementOpen(menuMain);
-        menuDetails.style.top = '4em';
-      }
-    });
+      window.addEventListener("scroll", () => {
+        var currentScroll = window.scrollY;
+        var scrollDiff = currentScroll - lastScroll;
+        
+        menuMain.style.position = 'fixed';
+
+        menuDetails.style.transition = '';
+
+        if (currentScroll === 0) {
+          menuMain.style.position = 'sticky';
+          console.log('ssssss',scrollDiff);
+          if (menuDetails.classList.contains('open')) {
+            menuDetails.style.transition = '0s ease';
+          }
+        }
+        else if (scrollDiff > 0) {
+          console.log('ddddd',scrollDiff);
+          // TODO : open ise  top = window.scrolly+px
+          // position =  absolute
+          // menu ekrandan cikar cikmaz top degerini sil , pozitionu fixed yap elementleri kapat : setMenuElementClose*3
+          //  menuDetails.style.top = scrollDiffSum + 'px';
+          // scrolled down -- header hide
+           setMenuElementClose(menuMain);
+           menuDetails.style.position = 'absolute';
+          // setMenuElementClose(menuDetails);
+          // setMenuElementClose(menuFlowersDetails);
+          // setMenuElementClose(menuPlantDetails);
+        }
+        else {
+          console.log('erfsefrsd', scrollDiff);
+          // scrolled up -- header show
+          // menuDetails.style.top = scrollDiffSum + 'px';
+          setMenuElementOpen(menuMain);
+        }
+        lastScroll = currentScroll;
+      });
+
+      menuDetails.addEventListener('scroll', () => {
+        if (menuDetails.scrollTop >= 67) {
+          setMenuElementClose(menuMain);
+          menuDetails.style.top = '0em';
+        } else {
+          setMenuElementOpen(menuMain);
+          menuDetails.style.top = '4em';
+        }
+      });
+    }
   });
 })();

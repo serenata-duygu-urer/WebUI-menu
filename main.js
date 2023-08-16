@@ -6,16 +6,19 @@
         details.classList.remove('close')
         if (menuMain && menuMain.style.position !== 'fixed'&& details.classList.contains('open')) {
           menuMain.style.position = 'inherit';
-          details.style.transform = 'translateY(0em)';
+        }
+        if (menuMain && menuMain.style.position === 'fixed'&& details.classList.contains('open')) {
+          details.style.top = '4em';
         }
        
       } else {
         details.classList.add('close');
         details.classList.remove('open');
         if (menuMain && menuMain.style.position !== 'fixed' && details.classList.contains('close')) {
-          // todo fix scroll csss in here 
           menuMain.style.position = 'sticky';
-          details.style.transform = '';
+        }
+        if (menuMain && menuMain.style.position === 'fixed' && details.classList.contains('close')) {
+          details.style.top = '';
         }
       }
     });
@@ -62,7 +65,6 @@
     window.addEventListener("scroll", () => {
       var currentScroll = window.scrollY; 
       var scrollDiff = currentScroll - lastScroll;
-      menuDetails.style.transform = '';
 
       menuMain.style.position = 'fixed';
       menuDetails.style.position = 'fixed';
@@ -72,14 +74,13 @@
       if (currentScroll === 0) {
         menuMain.style.position = 'sticky';
         if (menuDetails.classList.contains('open')) {
-          menuDetails.style.transform = 'translateY(0em)';
           menuDetails.style.transition = '0s ease';
         }
       }
       else if (scrollDiff > 0) {
 
         // scrolled down -- header hide
-        setMenuElementClose(menuMain);
+         setMenuElementClose(menuMain);
         setMenuElementClose(menuDetails);
         setMenuElementClose(menuFlowersDetails);
         setMenuElementClose(menuPlantDetails);
@@ -87,9 +88,6 @@
       else {
         // scrolled up -- header show
         setMenuElementOpen(menuMain);
-        // menuMain.style.top = '';
-        // menuDetails.style.top = '';
-
       }
       lastScroll = currentScroll;
     });

@@ -58,7 +58,7 @@ a {
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
     background: #fff;
-    z-index: 100;
+    /* z-index: 100; */
     position: sticky;
     transition: .5s ease;
     /* border-bottom: 1px solid #000; */
@@ -84,19 +84,19 @@ a {
   }
 
   .menu-details {
-    z-index: 10;
+    /* z-index: 10; */
     position: absolute;
     width: 100%;
     background: #fff;
     box-sizing: border-box;
     transition: .5s ease;
-    overflow-y: scroll;
+    overflow: auto;
     max-height: 100%;
   }
 
   .menu-details.open {
     /* TODO: bunu 0 a cekecek bir yol bul*/
-    transform: translateY(4em);
+    transform: translateY(0em);
   }
 
   .menu-details.close {

@@ -78,13 +78,13 @@
       makeElementInvisible(menuPlantDeals);
       setMenu(menuDetails, menuFlowersDetails, menuPlantDetails);
       menuMain.style.position = 'inherit';
-
+var isScrolledUp = false;
       window.addEventListener("scroll", () => {
         var currentScroll = window.scrollY;
         var scrollDiff = currentScroll - lastScroll;
 
         menuDetails.style.transition = '';
-        menuDetailsTop = parseInt(window.getComputedStyle(menuDetails).getPropertyValue('top'));
+        
         if (currentScroll === 0) {
           menuMain.style.position = 'inherit';
           if (menuDetails.classList.contains('open')) {
@@ -95,14 +95,22 @@
           // TODO : open ise  top = window.scrolly+px
           // position =  absolute
           // scrolled down -- header hide
-
+          console.log(isScrolledUp);
+          if (isScrolledUp) {
+            menuMain.style.position = 'absolute';
+            menuMain.style.top = (window.scrollY) + 'px';
+            menuDetails.style.position = 'absolute';
+            menuDetails.style.top = (64 + window.scrollY) + 'px';
+            isScrolledUp = false;
+          }
+          menuDetailsTop = parseInt(window.getComputedStyle(menuDetails).getPropertyValue('top'));
+          //console.log(menuDetailsTop, window.scrollY - menuDetails.clientHeight);
           if (menuDetails.classList.contains('open') && (menuDetailsTop) < window.scrollY - menuDetails.clientHeight) {
+            menuMain.style.top = '';
             setMenuElementClose(menuMain);
             setMenuElementClose(menuDetails);
             setMenuElementClose(menuFlowersDetails);
             setMenuElementClose(menuPlantDetails);
-            menuMain.style.position = 'absolute';
-            menuDetails.style.top = (64 + window.scrollY) + 'px';
           }
           if (!menuDetails.classList.contains('open')) {
             menuMain.style.position = 'fixed';
@@ -113,16 +121,19 @@
         else {
           // scrolled up -- header show
           setMenuElementOpen(menuMain);
-          menuDetails.getBoundingClientRect().top
           if (menuDetails.classList.contains('open') && menuDetails.getBoundingClientRect().top > 64) {
+            isScrolledUp = true;
+            menuMain.style.position = 'fixed';
+            menuMain.style.top = '';
             menuDetails.style.position = 'fixed';
             menuDetails.style.top = '64px';
           }
         }
         lastScroll = currentScroll;
       });
-
+      
       menuDetails.addEventListener('scroll', () => {
+        menuDetails.style.position = 'fixed';
         if (menuDetails.scrollTop >= 64) {
           setMenuElementClose(menuMain);
           menuDetails.style.top = '0em';

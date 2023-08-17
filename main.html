@@ -20,7 +20,7 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row no-margin menu-wrapper">
+    <div class="row no-margin menu-wrapper" id="menu-wrapper">
       <div class="row menu-main open" id="menu-main">
         <div class="menu-row">
           <div class="menu-item burger-menu col-large-1 col-small-1 col-medium-1">
@@ -51,7 +51,7 @@
                 New
               </a>
             </li>
-            <li class="dropdown menu-detail-item">
+            <li class="dropdown menu-detail-item" id="dropdown-flowers">
               <a class="menu-detail-main-heading" title="Flowers" id="menu-flowers">
                 Flowers&nbsp;
                 <i class="fa fa-angle-down"></i>
@@ -230,8 +230,7 @@
                     </li>
                   </ul>
                 </div>
-                <!-- todo for mobile make it display none  -->
-                <div class="row menu-subsection">
+                <div class="row menu-subsection" id="deal-flower">
                   <div class="menu-subheading">
                     Deal of the week
                   </div>
@@ -260,11 +259,11 @@
                 </div>
               </div>
             </li>
-            <li class="dropdown menu-detail-item">
+            <li class="dropdown menu-detail-item" id="dropdown-plants">
               <a class="menu-detail-main-heading" title="Plants" id="menu-plants">
                 Plants&nbsp;<i class="fa fa-angle-down"></i>
               </a>
-              <div id="submenu-plants" class="menu-submenu-list close"  style="display: none;">
+              <div id="submenu-plants" class="menu-submenu-list close">
                 <div class="row menu-subsection">
                   <div class="menu-subheading">
                     Most Popular Plants
@@ -331,8 +330,8 @@
                     </li>
                   </ul>
                 </div>
-                <!-- todo for mobile make it display none  -->
-                <div>
+
+                <div  class="row menu-subsection" id="deal-plant">
                   <div class="menu-subheading">
                     Deal of the week
                   </div>

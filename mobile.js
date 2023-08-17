@@ -1,4 +1,5 @@
 (function () {
+  var menuDetailsTop = 0;
   var mobileMenuTrigger = function (trigger, details, menuMain) {
     trigger.addEventListener('click', () => {
       if (!details.classList.contains('open')) {
@@ -6,19 +7,22 @@
         details.classList.remove('close')
         if (menuMain && menuMain.style.position !== 'fixed' && details.classList.contains('open')) {
           menuMain.style.position = 'inherit';
-          details.style.top = (67) + 'px';
+          menuMain.style.top = '0px';
+          details.style.top = (64) + 'px';
         }
         if (menuMain && menuMain.style.position === 'fixed' && details.classList.contains('open')) {
-          details.style.top = (window.scrollY + 67) + 'px';
+          /// menuMain.style.top = window.scrollY + 'px';
+          details.style.top = (window.scrollY + 64) + 'px';
         }
 
       } else {
         details.classList.add('close');
         details.classList.remove('open');
         if (menuMain && menuMain.style.position !== 'fixed' && details.classList.contains('close')) {
-          menuMain.style.position = 'sticky';
+          menuMain.style.position = 'inherit';
         }
         if (menuMain && menuMain.style.position === 'fixed' && details.classList.contains('close')) {
+          menuMain.style.top = '0px';
           details.style.top = '';
         }
       }
@@ -54,57 +58,72 @@
       element.classList.remove("open");
     }
   };
-
+  var makeElementInvisible = function (element) {
+    if (element) {
+      element.style.display = 'none';
+    }
+  };
   document.addEventListener("DOMContentLoaded", function (event) {
     if (window.innerWidth <= 1023) {
       var menuMain = document.getElementById('menu-main');
       var menuDetails = document.getElementById('menu-details');
       var menuFlowersDetails = document.getElementById('submenu-flowers');
       var menuPlantDetails = document.getElementById('submenu-plants');
+      var menuFlowersDeals = document.getElementById('deal-flower');
+      var menuPlantDeals = document.getElementById('deal-plant');
       var scrollDiffSum = 0;
+
+      // make details invisible on first load
+      makeElementInvisible(menuFlowersDeals);
+      makeElementInvisible(menuPlantDeals);
       setMenu(menuDetails, menuFlowersDetails, menuPlantDetails);
-      menuMain.style.position = 'sticky';
-      // menuDetails.style.position = 'fixed';
-      
+      menuMain.style.position = 'inherit';
+
       window.addEventListener("scroll", () => {
         var currentScroll = window.scrollY;
         var scrollDiff = currentScroll - lastScroll;
-        
-        menuMain.style.position = 'fixed';
 
         menuDetails.style.transition = '';
-
+        menuDetailsTop = parseInt(window.getComputedStyle(menuDetails).getPropertyValue('top'));
         if (currentScroll === 0) {
-          menuMain.style.position = 'sticky';
-          console.log('ssssss',scrollDiff);
+          menuMain.style.position = 'inherit';
           if (menuDetails.classList.contains('open')) {
             menuDetails.style.transition = '0s ease';
           }
         }
         else if (scrollDiff > 0) {
-          console.log('ddddd',scrollDiff);
           // TODO : open ise  top = window.scrolly+px
           // position =  absolute
-          // menu ekrandan cikar cikmaz top degerini sil , pozitionu fixed yap elementleri kapat : setMenuElementClose*3
-          //  menuDetails.style.top = scrollDiffSum + 'px';
           // scrolled down -- header hide
-           setMenuElementClose(menuMain);
-           menuDetails.style.position = 'absolute';
-          // setMenuElementClose(menuDetails);
-          // setMenuElementClose(menuFlowersDetails);
-          // setMenuElementClose(menuPlantDetails);
+
+          if (menuDetails.classList.contains('open') && (menuDetailsTop) < window.scrollY - menuDetails.clientHeight) {
+            setMenuElementClose(menuMain);
+            setMenuElementClose(menuDetails);
+            setMenuElementClose(menuFlowersDetails);
+            setMenuElementClose(menuPlantDetails);
+            menuMain.style.position = 'absolute';
+            menuDetails.style.top = (64 + window.scrollY) + 'px';
+          }
+          if (!menuDetails.classList.contains('open')) {
+            menuMain.style.position = 'fixed';
+            setMenuElementClose(menuMain);
+          }
+          menuDetails.style.position = 'absolute';
         }
         else {
-          console.log('erfsefrsd', scrollDiff);
           // scrolled up -- header show
-          // menuDetails.style.top = scrollDiffSum + 'px';
           setMenuElementOpen(menuMain);
+          menuDetails.getBoundingClientRect().top
+          if (menuDetails.classList.contains('open') && menuDetails.getBoundingClientRect().top > 64) {
+            menuDetails.style.position = 'fixed';
+            menuDetails.style.top = '64px';
+          }
         }
         lastScroll = currentScroll;
       });
 
       menuDetails.addEventListener('scroll', () => {
-        if (menuDetails.scrollTop >= 67) {
+        if (menuDetails.scrollTop >= 64) {
           setMenuElementClose(menuMain);
           menuDetails.style.top = '0em';
         } else {

@@ -6,12 +6,14 @@
     margin-right: auto;
     margin-left: auto
   }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
   }
+
   .row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -21,12 +23,12 @@
     margin-right: -15px;
     margin-left: -15px
   }
-  
+
   .utility-item {
     color: #ff785a;
   }
 
-  .no-margin{
+  .no-margin {
     margin-left: 0;
     margin-right: 0;
   }
@@ -48,14 +50,16 @@
 
   .menu-main.open {
     /* max-height: 1000px; */
-    transform: translateY(0);
+    /* transform: translateY(0); */
+    top: 0px
   }
 
   .menu-main.close {
     /* overflow: scroll;
     max-height: 0;
     transition: max-height 1s; */
-    transform: translateY(-100%);
+    /* transform: translateY(-100%); */
+    top: -65px;
   }
 
   ul.menu-items {

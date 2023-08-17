@@ -5,6 +5,7 @@
     margin-left: auto;
     margin-right: auto;
     line-height: .8;
+    z-index: 100;
     /* width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -47,7 +48,7 @@
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
     background: #fff;
-    z-index: 1;
+    z-index: 10;
     justify-content: center;
     align-items: center;
     /* position: sticky; */
@@ -116,7 +117,9 @@
     -webkit-column-gap: 2em;
     -moz-column-gap: 2em;
     column-gap: 2em;
-    max-width: min-content;
+    max-width: 1200px;
+    width: 100%;
+    transition: .5s ease;
   }
 
 
@@ -149,6 +152,12 @@
   .menu-detail-main-heading {
     padding: 1em;
   }
+  
+  /* a.menu-detail-main-heading:hover {
+    background: #eee;
+    /* border-radius: 6px;
+    border: 1px solid #eee; 
+  } */
 
   ul.menu-items {
     display: block;

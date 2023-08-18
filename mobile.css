@@ -46,20 +46,13 @@
     z-index: 10;
     position: sticky;
     transition: .25s ease;
-    /* border-bottom: 1px solid #000; */
   }
 
   .menu-main.open {
-    /* max-height: 1000px; */
-    /* transform: translateY(0); */
     top: 0px
   }
 
   .menu-main.close {
-    /* overflow: scroll;
-    max-height: 0;
-    transition: max-height 1s; */
-    /* transform: translateY(-100%); */
     top: -65px;
   }
 
@@ -74,10 +67,7 @@
   }
 
   .menu-details {
-    /* z-index: 10; */
-    /*position: -webkit-sticky; todo check why sticky not working 
-    position: sticky;
-    top: 0;*/
+    z-index: 10;
     position: absolute;
     width: 100%;
     background: #fff;
@@ -90,14 +80,12 @@
   .menu-details.open {
     /*max-height: calc(100% - 1px);*/
     max-height: 1000px;
-    /* transform: translateY(0em); */
   }
 
   .menu-details.close {
     overflow: overlay;
     max-height: 0;
     transition: max-height 1s;
-    /* transform: translateY(-120%); */
   }
 
   .menu-row {
@@ -113,7 +101,6 @@
   }
 
   .site-img-menu {
-    /* display: contents; */
     align-items: inherit;
   }
 
@@ -200,7 +187,6 @@
   }
 }
 
-/*foundation hyjack*/
 @media print,
 screen and (min-width:64em) {
 
@@ -427,5 +413,3 @@ screen and (min-width:40em) {
 .col-small-12 {
   width: 100%
 }
-
-/**/

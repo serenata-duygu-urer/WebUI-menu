@@ -36,7 +36,7 @@
       makeElementInvisible(menuFlowersDetails);
       makeElementInvisible(menuPlantDetails);
 
-      // add elements hover property
+      //add elements hover property
 
       elementHoverProperty(menuPlantTrigger, menuPlantDetails, menuWrapper);
       elementHoverEndProperty(dropdownPlants, menuPlantDetails);

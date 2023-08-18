@@ -171,6 +171,11 @@
   }
 
   div#deal-plant {
-    display: -webkit-box;
+    display: table;
+    break-inside: avoid-column;
+  }  
+  div#deal-flower {
+    display: table;
+    break-inside: avoid-column;
   }
 }

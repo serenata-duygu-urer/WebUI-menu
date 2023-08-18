@@ -4,7 +4,8 @@
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    overflow-x: hidden;
   }
 
   img {
@@ -87,7 +88,8 @@
   }
 
   .menu-details.open {
-    max-height: calc(100% - 1px);
+    /*max-height: calc(100% - 1px);*/
+    max-height: 1000px;
     /* transform: translateY(0em); */
   }
 

@@ -11,7 +11,6 @@
           details.style.top = (64) + 'px';
         }
         if (menuMain && menuMain.style.position === 'fixed' && details.classList.contains('open')) {
-          /// menuMain.style.top = window.scrollY + 'px';
           details.style.top = (window.scrollY + 64) + 'px';
         }
 
@@ -56,6 +55,7 @@
     if (element.classList.contains('open')) {
       element.classList.add("close");
       element.classList.remove("open");
+      element.style.top = '';
     }
   };
   var makeElementInvisible = function (element) {
@@ -71,20 +71,18 @@
       var menuPlantDetails = document.getElementById('submenu-plants');
       var menuFlowersDeals = document.getElementById('deal-flower');
       var menuPlantDeals = document.getElementById('deal-plant');
-      var scrollDiffSum = 0;
 
       // make details invisible on first load
       makeElementInvisible(menuFlowersDeals);
       makeElementInvisible(menuPlantDeals);
       setMenu(menuDetails, menuFlowersDetails, menuPlantDetails);
       menuMain.style.position = 'inherit';
-var isScrolledUp = false;
+      var isScrolledUp = false;
       window.addEventListener("scroll", () => {
+        // TODO: fix weird movements on scroll
         var currentScroll = window.scrollY;
         var scrollDiff = currentScroll - lastScroll;
-
         menuDetails.style.transition = '';
-        
         if (currentScroll === 0) {
           menuMain.style.position = 'inherit';
           if (menuDetails.classList.contains('open')) {
@@ -92,20 +90,19 @@ var isScrolledUp = false;
           }
         }
         else if (scrollDiff > 0) {
-          // TODO : open ise  top = window.scrolly+px
-          // position =  absolute
-          // scrolled down -- header hide
-          console.log(isScrolledUp);
           if (isScrolledUp) {
             menuMain.style.position = 'absolute';
             menuMain.style.top = (window.scrollY) + 'px';
             menuDetails.style.position = 'absolute';
             menuDetails.style.top = (64 + window.scrollY) + 'px';
-            isScrolledUp = false;
           }
-          menuDetailsTop = parseInt(window.getComputedStyle(menuDetails).getPropertyValue('top'));
-          //console.log(menuDetailsTop, window.scrollY - menuDetails.clientHeight);
-          if (menuDetails.classList.contains('open') && (menuDetailsTop) < window.scrollY - menuDetails.clientHeight) {
+          if (menuDetails.classList.contains('open') && menuDetails.style.position === 'fixed') {
+            menuDetails.style.position = 'absolute';
+            menuDetails.style.top = (64 + window.scrollY)+ 'px';
+          }
+          menuDetailsTop = isScrolledUp ? (64 + window.scrollY) : parseInt(window.getComputedStyle(document.getElementById('menu-details')).getPropertyValue('top'));
+          isScrolledUp = false;
+          if (menuDetails.classList.contains('open') && (menuDetailsTop) <= window.scrollY - menuDetails.clientHeight) {
             menuMain.style.top = '';
             setMenuElementClose(menuMain);
             setMenuElementClose(menuDetails);
@@ -121,7 +118,7 @@ var isScrolledUp = false;
         else {
           // scrolled up -- header show
           setMenuElementOpen(menuMain);
-          if (menuDetails.classList.contains('open') && menuDetails.getBoundingClientRect().top > 64) {
+           if (menuDetails.classList.contains('open') && menuDetails.getBoundingClientRect().top > 64) {
             isScrolledUp = true;
             menuMain.style.position = 'fixed';
             menuMain.style.top = '';
@@ -130,17 +127,6 @@ var isScrolledUp = false;
           }
         }
         lastScroll = currentScroll;
-      });
-      
-      menuDetails.addEventListener('scroll', () => {
-        menuDetails.style.position = 'fixed';
-        if (menuDetails.scrollTop >= 64) {
-          setMenuElementClose(menuMain);
-          menuDetails.style.top = '0em';
-        } else {
-          setMenuElementOpen(menuMain);
-          menuDetails.style.top = '4em';
-        }
       });
     }
   });

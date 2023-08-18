@@ -8,7 +8,12 @@
   var elementHoverProperty = function (trigger, element, parentElement) {
     if (trigger && element) {
       trigger.addEventListener('mouseover', () => {
-        element.style.top= (parentElement.clientHeight-1)+'px';
+        element.style.top= '';
+        // 37px = 1em (menu wrapper padding-bottom)+ 1px menu list border-bottom + 10px padding bottom +10px margin bottom
+        element.style.transform =  'translateY(37px)';
+        /// element.style.top= (parentElement.clientHeight-1)+'px';
+        // this is causing slide down to menu 
+
         element.style.opacity = 1;
       });
     }

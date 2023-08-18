@@ -1,4 +1,4 @@
-(function () {
+var desktop = function () {
   var makeElementInvisible = function (element) {
     if (element) {
       element.style.top= (-1 * (element.clientHeight))+'px'
@@ -51,4 +51,4 @@
 
     }
   });
-})();
+}();

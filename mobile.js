@@ -1,4 +1,4 @@
-(function () {
+var mobile = function () {
   var menuDetailsTop = 0;
   var lastScroll = 0;
   var isScrolledUp = false;
@@ -140,4 +140,4 @@
       });
     }
   });
-})();
+}();

@@ -4,14 +4,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0;">
-  <link rel="stylesheet" href="./mobile.css" />
+  <!-- <link rel="stylesheet" href="./mobile.css" /> -->
+  <link rel="stylesheet" href="./mobile-second-option.css" />
+  <!-- <link rel="stylesheet" href="./mobile-third-option.css" /> -->
   <link rel="stylesheet" href="./desktop.css" />
   <link rel="stylesheet" href="./shared.css" />
   <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <script src="./mobile.js"></script>
-    <script src="./desktop.js"></script> -->
-    <script defer src="./shared.js"></script> 
+  <!-- <script src="./mobile.js"></script> -->
+  <script src="./mobile-second-option.js"></script>
+  <!-- <script src="./mobile-third-option.js"></script> -->
+    <script src="./desktop.js"></script>
+    <!-- <script defer src="./shared.js"></script>  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -22,10 +26,14 @@
 <body>
   <div class="container-fluid">
     <div class="row no-margin menu-wrapper" id="menu-wrapper">
+      <label class="menu_overlay" for="menu-bars" id="menu-overlay"></label>
       <div class="row menu-main open" id="menu-main">
         <div class="menu-row">
           <div class="menu-item burger-menu col-large-1 col-small-1 col-medium-1">
-            <i class="fa fa-bars" id="menu-bars"></i>
+            <input type="checkbox" id="menu-bars" name="menu-bars" class="m-menu__checkbox">
+            <label class="m-menu__toggle" for="menu-bars">
+              <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </label>
           </div>
           <div class="menu-item site-img-menu col-large-8 col-small-8 col-medium-8">
             <img alt="Serenata Flowers"
@@ -36,9 +44,23 @@
           </div>
         </div>
       </div>
-      <div class="row menu-details close" id="menu-details">
+       <div class="row menu-details" id="menu-details" for="menu-bars">
+        <div class="row" id="menu-main-detail" style="width: 100%;">
+          <div class="menu-row">
+            <div class="menu-item burger-menu col-large-3 col-small-3 col-medium-3">
+              <input type="checkbox" id="menu-bars-detail" name="menu-bars" class="m-menu__checkbox">
+              <label class="m-menu__toggle" for="menu-bars">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+              </label>
+            </div>
+            <div class="menu-item site-img-menu col-large-9 col-small-9 col-medium-9">
+              <img class="site-img-submenu" alt="Serenata Flowers"
+                src="https://res.cloudinary.com/serenata-commerce-limited/image/upload/f_auto,q_auto/v1/WebContent/serenatalogo-280.png"
+                crossorigin="anonymous" />
+            </div>
+          </div>
+        </div>
         <div class="menu-items menu-row">
-
           <ul class="menu-detail">
             <li class="menu-detail-item">
               <a class="menu-detail-main-heading">
@@ -57,7 +79,7 @@
                 Flowers&nbsp;
                 <i class="fa fa-angle-down"></i>
               </a>
-              <div id="submenu-flowers" class="menu-submenu-list close">
+              <div id="submenu-flowers" class="menu-submenu-list">
                 <div class="row menu-subsection">
                   <div class="menu-subheading">
                     Most Popular Flowers
@@ -264,7 +286,7 @@
               <a class="menu-detail-main-heading" title="Plants" id="menu-plants">
                 Plants&nbsp;<i class="fa fa-angle-down"></i>
               </a>
-              <div id="submenu-plants" class="menu-submenu-list close">
+              <div id="submenu-plants" class="menu-submenu-list">
                 <div class="row menu-subsection">
                   <div class="menu-subheading">
                     Most Popular Plants
@@ -406,7 +428,6 @@
               </a>
             </li>
           </ul>
-
         </div>
       </div>
     </div>

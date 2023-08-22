@@ -1,4 +1,4 @@
-var desktop = function () {
+(function () {
   var makeElementInvisible = function (element) {
     if (element) {
       element.style.top= (-1 * (element.clientHeight))+'px'
@@ -37,6 +37,7 @@ var desktop = function () {
       var menuWrapper = document.getElementById('menu-wrapper');
 
 
+
       // make details invisible on first load
       makeElementInvisible(menuFlowersDetails);
       makeElementInvisible(menuPlantDetails);
@@ -51,4 +52,4 @@ var desktop = function () {
 
     }
   });
-}();
+})();

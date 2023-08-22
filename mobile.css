@@ -187,9 +187,7 @@
   }
 }
 
-@media print,
-screen and (min-width:64em) {
-
+@media print, screen and (min-width:64em) {
   .col-large-1,
   .col-large-10,
   .col-large-11,
@@ -260,9 +258,7 @@ screen and (min-width:64em) {
   }
 }
 
-@media print,
-screen and (min-width:40em) {
-
+@media print, screen and (min-width:40em) {
   .col-medium-1,
   .col-medium-10,
   .col-medium-11,

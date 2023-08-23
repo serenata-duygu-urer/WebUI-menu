@@ -40,7 +40,6 @@
                 setMenuElementClose(e);
               }
             });
-
           }
         }
       });
